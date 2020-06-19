@@ -39,9 +39,11 @@ Suppose that you have an n-story building and plenty of eggs. Suppose also that 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
 
 
-Answer: The total floors number is  n. if floors  >= f == egg broken; if floors < f == egg not broken. To find this floor.
+Answer: 
 
-	My plan would use binary  searching algorithms to save searching space time. I will set floor == n/2 as the base . and check if the egg breaks from there. If I find  this floor where the egg == broken, it is still high, so repeatedly,  I will  search left branch until I find the floor which egg can not broken.  Binary  searching saves time and space than linear one.
+The total floors number is  n. f is the floor we are looking for. if the floors  >= f, egg broken; if the floor < f, egg not broken. To find this floor.
+
+My plan would use binary  searching algorithms to save searching space time. I will set floor == n/2 as the base . and check if the egg breaks from there. If I find  this floor where the egg == broken, this floor is still high. So repeatedly,  I will  search left branch until I find the floor which egg can not broken.  Binary  searching saves time and space than linear one.
 
 
 
