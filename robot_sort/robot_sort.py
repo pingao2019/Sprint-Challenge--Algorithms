@@ -96,9 +96,38 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        # reference:https://robodk.com/doc/en/PythonAPI/examples.html 
+        #It can move left or right.  It can pick up an item. If it tries to pick up an item while already holding one, it will swap the items instead. It can compare the item it's holding to the item in front of it. It can switch a light on its head on or off.
+        #  a sorting method this week that might be useful.  The robot has exactly one bit of memory: its light. 
+         
+        #self._light == "ON"
+        while True:
+            self.set_light_off()
+            while self.can_move_right():
+                self.swap_item()
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_left()
+                self.swap_item()
+                self.move_right()
+            
+            self.set_light_off()
+            self.move_left()
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_right()
+                self.swap_item()
+                self.move_left()
+            if self.light_is_on() == False:
+                return
 
+        
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
